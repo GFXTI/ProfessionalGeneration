@@ -7,9 +7,9 @@
 ]==]
 
 local cams = workspace.CurrentCamera.ViewportSize
-local gradient = syn.request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/angryimg.png?raw=true"}).Body
-local colorpgradient = syn.request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/overlay3.png?raw=true"}).Body
-local huegradient = syn.request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/hue.png?raw=true"}).Body
+local gradient = syn.http_request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/angryimg.png?raw=true"}).Body
+local colorpgradient = syn.http_request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/overlay3.png?raw=true"}).Body
+local huegradient = http_request({Url = "https://github.com/GFXTI/ProfessionalGeneration/blob/main/LibraryImages/hue.png?raw=true"}).Body
 local startpos = (cams / 2) - Vector2.new(300, 200)
 local lib = {
     AccentColor = Color3.new(0.078431, 0.333333, 0.878431)
@@ -22,7 +22,7 @@ local shortendbinds = {["MouseButton1"] = "MB1", ["MouseButton2"] = "MB2", ["Mou
 local sv = setmetatable({}, {__index = function(_, a)
     return game:GetService(a)
 end})
-local isv2 = select(2, identifyexecutor()):find "v2"
+local isv2 = true
 local Draw, funcs do
     local drag = {}
     funcs = {
